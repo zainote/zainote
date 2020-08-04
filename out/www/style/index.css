@@ -1,0 +1,272 @@
+
+.app-container {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+  /* 火狐 */
+  -moz-user-select: none;
+  /* webkit浏览器 */
+  -webkit-user-select: none;
+  /* IE10 */
+  -ms-user-select: none;
+  /* 早期浏览器 */
+  -khtml-user-select: none;
+  /* 默认 */
+  user-select: none;
+  background-color: #282c34;
+}
+
+.window-title-bar .window-title-icon {
+  height: 20px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+.ZuiTitleBar-root {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  font-size: 13px;
+  color: #9da5b4;
+  background-color: #21252b;
+}
+.ZuiTitleBar-root .ZuiTitleBar-drag {
+  position: absolute;
+  top: 4px;
+  bottom: 0px;
+  left: 4px;
+  right: 4px;
+  /* electron 指定拖动窗口位置元素 */
+  -webkit-app-region: drag;
+}
+.ZuiTitleBar-root .ZuiTitleBar-icon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 35px;
+  height: 100%;
+  z-index: 500;
+}
+.ZuiTitleBar-root .ZuiTitleBar-menu {
+  position: absolute;
+  top: 0px;
+  left: 35px;
+  height: 100%;
+  z-index: 520;
+  /* electron 排除拖动窗口位置元素 */
+  -webkit-app-region: no-drag;
+}
+.ZuiTitleBar-root .ZuiTitleBar-info {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ZuiTitleBar-root .ZuiTitleBar-controls {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 138px;
+  height: 100%;
+  z-index: 600;
+  -webkit-app-region: no-drag;
+}
+.ZuiTitleBar-root .ZuiTitleBar-controls .ZuiTitleBar-button {
+  float: left;
+  width: 46px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ZuiTitleBar-root .ZuiTitleBar-controls .ZuiTitleBar-button:hover {
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+.ZuiTitleBar-root .ZuiTitleBar-controls .ZuiTitleBar-close:hover {
+  color: #fff;
+  background-color: rgba(232, 17, 35, 0.9);
+}
+
+.window-menu-bar .menu-bar-button {
+  height: 30px;
+  min-width: auto;
+  font-size: 13px;
+  font-weight: unset;
+  text-transform: none;
+  border-radius: 0px;
+  transition: none;
+  font-family: Segoe WPC, Segoe UI, sans-serif;
+  cursor: default;
+  color: #9da5b4;
+}
+.window-menu-bar .menu-bar-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ZuiMenuList-root {
+  display: inline-block;
+}
+.ZuiMenuList-root :focus {
+  outline: 0px;
+}
+.ZuiMenuList-root .ZuiMenuList-button {
+  display: inline-block;
+}
+.ZuiMenuList-popper .ZuiMenuList-paper {
+  visibility: unset !important;
+  opacity: 1 !important;
+  transform: none !important;
+  color: #9da5b4;
+  background-color: #21252b;
+}
+.ZuiMenuList-popper .ZuiMenuList-paper .MuiListItem-button {
+  line-height: 1;
+  padding-left: 28px;
+  padding-right: 28px;
+  font-size: 13px;
+  transition: none;
+  cursor: default;
+}
+.ZuiMenuList-popper .ZuiMenuList-paper .MuiListItem-button .ZuiMenuList-left-text {
+  margin-right: 50px;
+}
+.ZuiMenuList-popper .ZuiMenuList-paper .MuiListItem-button .ZuiMenuList-right-text {
+  width: 100%;
+  text-align: right;
+}
+.ZuiMenuList-popper .ZuiMenuList-paper .MuiListItem-button .ZuiMenuList-sub-icon {
+  position: absolute;
+  right: 10px;
+}
+.ZuiMenuList-popper .ZuiMenuList-paper .MuiListItem-button:hover {
+  background-color: #2c313a;
+}
+.ZuiMenuList-popper .ZuiMenuList-paper .ZuiMenuList-split-line {
+  height: 1px;
+  margin: 5px 15px;
+  background: #777;
+}
+.ZuiMenuList-popper .ZuiMenuList-paper .ZuiMenuList-sub-list {
+  width: 100%;
+}
+.ZuiMenuList-popper .ZuiMenuList-paper .ZuiMenuList-sub-list .ZuiMenuList-button {
+  width: 100%;
+}
+
+.zainote-try {
+  width: 100%;
+  height: calc(100% - 30px);
+}
+.zainote-try .zainote-try-select {
+  float: left;
+  width: 200px;
+  height: 100%;
+  background-color: #21252b;
+}
+.zainote-try .zainote-try-select .try-select-button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  text-transform: none;
+  border-radius: 0px;
+  transition: none;
+  color: #9da5b4;
+}
+.zainote-try .zainote-try-select .button-selected {
+  background-color: #2c313a;
+}
+.zainote-try .zainote-try-content {
+  float: right;
+  width: calc(100% - 200px);
+  height: 100%;
+}
+
+.home-content {
+  background: #fff;
+}
+.home-content .home-title {
+  color: red;
+}
+.home-content .home-title .home-title-span {
+  color: blueviolet;
+}
+
+.markdown-it-demo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.markdown-it-demo .markdown-it-zain {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 50%;
+}
+.markdown-it-demo .markdown-it-zain .markdown-it-origin {
+  position: absolute;
+  left: 0px;
+  width: calc(50% - 6px);
+  height: calc(100% - 10px);
+}
+.markdown-it-demo .markdown-it-zain .markdown-it-html {
+  position: absolute;
+  right: 0px;
+  width: 50%;
+  height: 100%;
+  overflow: auto;
+  background: #fff;
+}
+.markdown-it-demo .markdown-it-iframe {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 50%;
+}
+
+.marked-demo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.marked-demo .marked-origin {
+  position: absolute;
+  left: 0px;
+  width: calc(50% - 6px);
+  height: 100%;
+}
+.marked-demo .marked-html {
+  position: absolute;
+  right: 0px;
+  width: 50%;
+  height: 100%;
+  overflow: auto;
+  background: #fff;
+}
+
+.monaco-editor-demo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.monaco-editor-demo .monaco-editor-title {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+}
+.monaco-editor-demo .monaco-editor-title .monaco-theme-button {
+  line-height: 1;
+}
+.monaco-editor-demo .monaco-editor-content {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  height: calc(100% - 30px);
+}
+
