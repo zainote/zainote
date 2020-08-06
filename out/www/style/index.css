@@ -258,14 +258,17 @@
 .monaco-editor-demo .monaco-editor-title {
   position: absolute;
   width: 100%;
-  height: 30px;
+  height: 26px;
+}
+.monaco-editor-demo .monaco-editor-title .monaco-theme-des {
+  color: #9da5b4;
 }
 .monaco-editor-demo .monaco-editor-title .monaco-theme-button {
   line-height: 1;
 }
 .monaco-editor-demo .monaco-editor-content {
   position: absolute;
-  top: 30px;
+  top: 26px;
   width: 100%;
   height: calc(100% - 30px);
 }
