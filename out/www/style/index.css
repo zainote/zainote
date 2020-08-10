@@ -1,6 +1,5 @@
-
-.app-container {
-  position: absolute;
+.ZuiWindowContainer-root {
+  position: fixed;
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -19,6 +18,11 @@
   background-color: #282c34;
 }
 
+.window-title-bar {
+  position: relative;
+  width: 100%;
+  height: 30px;
+}
 .window-title-bar .window-title-icon {
   height: 20px;
   padding-top: 5px;
@@ -31,7 +35,7 @@
   height: 30px;
   font-size: 13px;
   color: #9da5b4;
-  background-color: #21252b;
+  background-color: #282c34;
 }
 .ZuiTitleBar-root .ZuiTitleBar-drag {
   position: absolute;
@@ -148,6 +152,9 @@
 .ZuiMenuList-popper .ZuiMenuList-paper .MuiListItem-button:hover {
   background-color: #2c313a;
 }
+.ZuiMenuList-popper .ZuiMenuList-paper .ZuiMenuList-button-hover {
+  background-color: #2c313a;
+}
 .ZuiMenuList-popper .ZuiMenuList-paper .ZuiMenuList-split-line {
   height: 1px;
   margin: 5px 15px;
@@ -160,15 +167,21 @@
   width: 100%;
 }
 
-.zainote-try {
+.window-content {
+  position: relative;
   width: 100%;
   height: calc(100% - 30px);
+}
+
+.zainote-try {
+  width: 100%;
+  height: 100%;
 }
 .zainote-try .zainote-try-select {
   float: left;
   width: 200px;
   height: 100%;
-  background-color: #21252b;
+  background-color: #282c34;
 }
 .zainote-try .zainote-try-select .try-select-button {
   display: block;
@@ -188,14 +201,22 @@
   height: 100%;
 }
 
-.home-content {
+.electron-ipc {
+  width: 100%;
+  height: 100%;
+  background: #FFF;
+}
+
+.material-ui {
+  width: 100%;
+  height: 100%;
   background: #fff;
 }
-.home-content .home-title {
-  color: red;
-}
-.home-content .home-title .home-title-span {
-  color: blueviolet;
+
+.zainote-redux {
+  width: 100%;
+  height: 100%;
+  background: #fff;
 }
 
 .markdown-it-demo {
@@ -207,13 +228,14 @@
   position: absolute;
   top: 0px;
   width: 100%;
-  height: 50%;
+  height: 100%;
 }
 .markdown-it-demo .markdown-it-zain .markdown-it-origin {
   position: absolute;
   left: 0px;
   width: calc(50% - 6px);
-  height: calc(100% - 10px);
+  height: calc(100% - 5px);
+  resize: none;
 }
 .markdown-it-demo .markdown-it-zain .markdown-it-html {
   position: absolute;
@@ -230,18 +252,19 @@
   height: 50%;
 }
 
-.marked-demo {
+.zainote-marked {
   position: relative;
   width: 100%;
   height: 100%;
 }
-.marked-demo .marked-origin {
+.zainote-marked .marked-origin {
   position: absolute;
   left: 0px;
   width: calc(50% - 6px);
-  height: 100%;
+  height: calc(100% - 6px);
+  resize: none;
 }
-.marked-demo .marked-html {
+.zainote-marked .marked-out {
   position: absolute;
   right: 0px;
   width: 50%;
@@ -249,27 +272,132 @@
   overflow: auto;
   background: #fff;
 }
+.zainote-marked .marked-out .marked-html {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 50%;
+  overflow: auto;
+}
+.zainote-marked .marked-out .marked-html-string {
+  position: absolute;
+  bottom: 0px;
+  width: calc(100% - 6px);
+  height: calc(50% - 6px);
+  overflow: auto;
+  resize: none;
+  color: #000;
+  background: #fff;
+}
 
-.monaco-editor-demo {
+.zainote-monaco-editor {
   position: relative;
   width: 100%;
   height: 100%;
 }
-.monaco-editor-demo .monaco-editor-title {
+.zainote-monaco-editor .monaco-editor-title {
   position: absolute;
   width: 100%;
   height: 26px;
+  background-color: #21252b;
 }
-.monaco-editor-demo .monaco-editor-title .monaco-theme-des {
+.zainote-monaco-editor .monaco-editor-title .monaco-theme-des {
   color: #9da5b4;
 }
-.monaco-editor-demo .monaco-editor-title .monaco-theme-button {
+.zainote-monaco-editor .monaco-editor-title .monaco-theme-button {
   line-height: 1;
 }
-.monaco-editor-demo .monaco-editor-content {
+.zainote-monaco-editor .monaco-editor-content {
   position: absolute;
   top: 26px;
   width: 100%;
-  height: calc(100% - 30px);
+  height: calc(100% - 26px);
+}
+
+.ZainoteTry-draft-js {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.ZainoteTry-draft-js .draft-js-controls {
+  width: 100%;
+  height: 40px;
+  background-color: #21252b;
+  overflow: hidden;
+}
+.ZainoteTry-draft-js .draft-js-controls .controls-button-all {
+  width: 1011px;
+}
+.ZainoteTry-draft-js .draft-js-controls .controls-button-all .controls-button {
+  text-transform: none;
+}
+.ZainoteTry-draft-js .draft-js-controls .controls-button-all .vertical-divider:after {
+  content: "";
+  margin-left: 8px;
+  padding-left: 8px;
+  border-left: 1px solid #c0c4cc;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.ZainoteTry-draft-js .draft-js-controls:hover {
+  overflow-x: auto;
+  /*控制整个滚动条*/
+  /*滚动条两端方向按钮*/
+  /*滚动条中间滑动部分*/
+  /*滚动条右下角区域*/
+}
+.ZainoteTry-draft-js .draft-js-controls:hover::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-clip: padding-box;
+  background-color: #21252b;
+}
+.ZainoteTry-draft-js .draft-js-controls:hover::-webkit-scrollbar-button {
+  width: 0px;
+  background-color: #21252b;
+}
+.ZainoteTry-draft-js .draft-js-controls:hover::-webkit-scrollbar-thumb {
+  background-color: #4e5053;
+  border-radius: 5px;
+}
+.ZainoteTry-draft-js .draft-js-controls:hover::-webkit-scrollbar-corner {
+  background-color: #21252b;
+}
+.ZainoteTry-draft-js .draft-js-editor {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 36px);
+}
+.ZainoteTry-draft-js .draft-js-editor .DraftEditor-root .public-DraftEditorPlaceholder-root {
+  padding: 5px;
+  color: #9197a3;
+}
+.ZainoteTry-draft-js .draft-js-editor .DraftEditor-root .public-DraftEditorPlaceholder-hasFocus {
+  color: #bdc1c9;
+}
+.ZainoteTry-draft-js .draft-js-editor .DraftEditor-root .DraftEditor-editorContainer {
+  border-left: 0px;
+}
+.ZainoteTry-draft-js .draft-js-editor .DraftEditor-root .DraftEditor-editorContainer .public-DraftEditor-content {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 5px;
+  overflow: auto;
+}
+.ZainoteTry-draft-js .editor-hide-placeholder .public-DraftEditorPlaceholder-root {
+  display: none;
+}
+
+.zainote-about {
+  height: calc(100% - 100px);
+  padding: 50px 100px;
+  background: #fff;
+}
+.zainote-about .about-version-line {
+  line-height: 26px;
 }
 
