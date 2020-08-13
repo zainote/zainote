@@ -26,7 +26,7 @@
 .window-title-bar .window-title-icon {
   height: 20px;
   padding-top: 5px;
-  padding-left: 10px;
+  padding-left: 8px;
 }
 
 .ZuiTitleBar-root {
@@ -43,6 +43,15 @@
   bottom: 0px;
   left: 4px;
   right: 4px;
+  /* electron 指定拖动窗口位置元素 */
+  -webkit-app-region: drag;
+}
+.ZuiTitleBar-root .ZuiTitleBar-drag-maximize {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
   /* electron 指定拖动窗口位置元素 */
   -webkit-app-region: drag;
 }
@@ -201,12 +210,6 @@
   height: 100%;
 }
 
-.electron-ipc {
-  width: 100%;
-  height: 100%;
-  background: #FFF;
-}
-
 .material-ui {
   width: 100%;
   height: 100%;
@@ -237,12 +240,29 @@
   height: calc(100% - 5px);
   resize: none;
 }
-.markdown-it-demo .markdown-it-zain .markdown-it-html {
+.markdown-it-demo .markdown-it-zain .markdown-it-out {
   position: absolute;
   right: 0px;
   width: 50%;
   height: 100%;
   overflow: auto;
+  background: #fff;
+}
+.markdown-it-demo .markdown-it-zain .markdown-it-out .markdown-it-html {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 50%;
+  overflow: auto;
+}
+.markdown-it-demo .markdown-it-zain .markdown-it-out .markdown-html-string {
+  position: absolute;
+  bottom: 0px;
+  width: calc(100% - 6px);
+  height: calc(50% - 6px);
+  overflow: auto;
+  resize: none;
+  color: #000;
   background: #fff;
 }
 .markdown-it-demo .markdown-it-iframe {
